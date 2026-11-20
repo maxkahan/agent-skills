@@ -45,7 +45,6 @@ Use `/stream` for generic routing, or invoke a skill directly by name. Each skil
 | [`/stream-flutter`](https://getstream.io/agent-skills/docs/skills/stream-flutter/) | Flutter apps: Chat, Video, and Feeds, plus AI assistants and Stream Agents voice and text agents |
 | [`/stream-unity`](https://getstream.io/agent-skills/docs/skills/stream-unity/) | Unity projects (C#): Chat and Video, no Feeds |
 | [`/stream-unreal`](https://getstream.io/agent-skills/docs/skills/stream-unreal/) | Unreal Engine 5.7/5.8 projects (C++ and Blueprint): Chat only |
-| `/stream-feeds-migration` | Feeds v2 -> v3 migration: generates the sync mapping from your app's live data |
 
 `stream-builder` and `stream-docs` remain for older CLI installations and forward to the skills above.
 
@@ -59,7 +58,6 @@ Use `/stream` for generic routing, or invoke a skill directly by name. Each skil
 - **Build and extend React Native apps** - wire Stream Chat, Video, or Feeds into Expo or RN CLI projects, match a design, or migrate from Sendbird (`/stream-react-native`)
 - **Build and extend Unity games** - wire Stream Chat and Stream Video into a Unity project, build the chat and call UI on UGUI or UI Toolkit (neither SDK ships components), and get the player settings right for Android, iOS, desktop, or WebGL (`/stream-unity`)
 - **Build and extend Unreal Engine games** - wire Stream Chat into UE 5.7/5.8 C++ or Blueprint projects, drop in the shipped UMG chat widgets, and package for mobile or desktop (`/stream-unreal`)
-- **Plan a Feeds v2 -> v3 migration** - sample your v2 app's real activities and reactions and get back the sync `mapping` object, with the keys it deliberately left at their defaults (`/stream-feeds-migration`)
 - **Query live data** - "any active calls?", "show flagged messages", "list my channels" - natural language to the `getstream` CLI (`/stream`)
 - **Configure apps and moderation** - channel types, roles, permissions, blocklists, automod - via the `getstream` CLI (`/stream`)
 - **Answer SDK questions** - token patterns, strict mode, client/server instantiation, theme wiring (`/stream` or the relevant platform skill)

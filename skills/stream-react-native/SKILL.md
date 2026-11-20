@@ -356,9 +356,6 @@ symbol in the installed `stream-chat-react-native-core` source, not the
 wrapper. Rebuild native (`pod install`, or `npx expo prebuild --clean` and a new
 development build) before testing.
 
-Feeds v2 to v3 is a data migration as well as a code one: use the
-stream-feeds-migration skill for the mapping.
-
 ## Matching a reference design
 
 When the request carries a target appearance - a screenshot, a Figma frame,
