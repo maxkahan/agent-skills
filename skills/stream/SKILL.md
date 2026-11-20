@@ -111,15 +111,16 @@ First match wins:
    skill's ai-integration.md). Unity and
    Unreal have no Agents client SDK - tell the user before building.
 
-2. **Migrate from Sendbird:** use the platform-specific skill to migrate the
+2. **Migrate Feeds v2 to v3:** use stream-feeds-migration skill.
+3. **Migrate from Sendbird:** use the platform-specific skill to migrate the
    code; to move the data itself (users, channels, message history), read
    sendbird-data-migration.md.
-3. **Docs / "how does X work" questions:** use the `getstream docs` command,
+4. **Docs / "how does X work" questions:** use the `getstream docs` command,
    with an id from `getstream docs list`. In a command substitution like
    `$(getstream docs <id>)` don't add `2>&1`. The path you need is on stdout.
    On a wrong id stdout is empty and the error goes to stderr, so a bare
    `ls $(getstream docs <id>)` lists the current directory instead. Check the
    result first: `d=$(getstream docs <id>) && ls "$d"`.
-4. **Query or mutate app data** ("list channels", "any flagged messages?",
+5. **Query or mutate app data** ("list channels", "any flagged messages?",
    one-off API calls): use the `getstream api` command.
-5. **Genuinely ambiguous:** ask.
+6. **Genuinely ambiguous:** ask.

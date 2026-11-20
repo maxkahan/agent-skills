@@ -32,6 +32,7 @@ The `/stream` router directs app work to platform skills and uses the `getstream
 | Build or integrate a Flutter app | `stream-flutter` (docs orchestrator: `docs-map.md` + `setup.md` + `push.md`) |
 | Build or integrate a Unity Engine project | `stream-unity` (docs orchestrator: `docs-map.md` + `setup.md` + `ui.md` + `platforms.md`) |
 | Build or integrate an Unreal Engine project | `stream-unreal` (docs orchestrator: `docs-map.md` + `setup.md` + `widgets.md` + `platforms.md`) |
+| Build or review a Feeds v2 -> v3 sync mapping, and plan the code port | `stream-feeds-migration` (`SKILL.md` + `mapping-keys.md` + `code-inventory.md` + `porting-plan.md` + `fetch-sample.md`) |
 
 > **Routing precedence:** when user input contains a platform signal (e.g. `react native`, `expo`, `swift`, `ios`, `flutter`, `unity`, `unreal`), use the matching platform skill. For web or generic app work, use `stream-react`. A framework takes precedence over an OS: an Unreal app for iOS uses `stream-unreal`.
 
@@ -96,6 +97,12 @@ For older CLI installations, [`stream-builder`](skills/stream-builder/SKILL.md) 
   - [`setup.md`](skills/stream-unity/setup.md) - version-pinned install for both SDKs (`.unitypackage` import and the UPM manifest edit), CLI credentials, and the verified minimal client wiring with correct lifecycle
   - [`ui.md`](skills/stream-unity/ui.md) - building the UI yourself: the `ParticipantView` track-binding contract, self-preview, mobile orientation, visibility-driven subscriptions, and the Chat list / composer / typing patterns
   - [`platforms.md`](skills/stream-unity/platforms.md) - per-target player settings, IL2CPP and managed stripping, the Newtonsoft and WebRTC conflicts, Android/iOS/desktop/WebGL, and what push does and does not do
+- [`skills/stream-feeds-migration/`](skills/stream-feeds-migration/) - **Feeds v2 -> v3 migration sub-skill**
+  - [`SKILL.md`](skills/stream-feeds-migration/SKILL.md) - the workflow: credentials into the environment, sample the v2 app, read its v2 integration code when available, analyze, emit the `mapping` object, and state what the sample (and code) could not prove
+  - [`mapping-keys.md`](skills/stream-feeds-migration/mapping-keys.md) - the full key catalogue with defaults, id-precedence and rename resolution rules, and a worked v2-shape -> mapping-key example for each common case
+  - [`fetch-sample.md`](skills/stream-feeds-migration/fetch-sample.md) - the sampler, kept as skill text. The agent writes it to `fetch_sample.py` in the working directory when a sample is needed, runs it, then deletes it. It is not shipped as code.
+  - [`code-inventory.md`](skills/stream-feeds-migration/code-inventory.md) - reading the app's v2 integration code: finding write paths, building the inventory, and cross-checking it against the sample
+  - [`porting-plan.md`](skills/stream-feeds-migration/porting-plan.md) - planning the move of the app's code from v2 to v3: the switch-over order, a v2 -> v3 row per path, and the rules for porting when the user asks
 - [`skills/stream-unreal/`](skills/stream-unreal/) - **Unreal Engine sub-skill** (docs orchestrator; Chat only)
   - [`SKILL.md`](skills/stream-unreal/SKILL.md) - entrypoint: engine-version / feature-support / C++-vs-Blueprint gates, the `.md` docs convention plus the per-page Unreal-coverage caveat, and the source-of-truth ladder
   - [`RULES.md`](skills/stream-unreal/RULES.md) - Unreal non-negotiable rules + the pitfalls that fail silently (the `ApiKey`-before-`BeginPlay` trap, `TWeakObjectPtr` callbacks, client on the HUD, module deps)

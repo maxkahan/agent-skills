@@ -15,6 +15,7 @@ This repository contains the Stream skill pack. Skill source lives under `skills
 | [`skills/stream-flutter/SKILL.md`](skills/stream-flutter/SKILL.md) | Build or integrate Stream Chat, Video, and Feeds in Flutter apps (stream_chat_flutter, stream_chat_flutter_core, stream_video_flutter, stream_feeds), including AI assistants and agentic chat (`stream_chat_flutter_ai`, generative UI with A2UI) and apps built on Stream Agents |
 | [`skills/stream-unity/SKILL.md`](skills/stream-unity/SKILL.md) | Build or integrate Stream Chat and Stream Video in Unity Engine projects (C#). Chat + Video - no Feeds SDK for Unity |
 | [`skills/stream-unreal/SKILL.md`](skills/stream-unreal/SKILL.md) | Build or integrate Stream Chat in Unreal Engine 5.7/5.8 projects (C++ and Blueprint). Chat only - no Video or Feeds SDK for Unreal |
+| [`skills/stream-feeds-migration/SKILL.md`](skills/stream-feeds-migration/SKILL.md) | Generate the v2 -> v3 Activity Feeds sync mapping by sampling the v2 app's live activities and reactions, and by reading the app's v2 integration code when it is available. No CLI and no project required - it emits a config object |
 
 For Sendbird data migration, use the shared [`skills/stream/sendbird-data-migration.md`](skills/stream/sendbird-data-migration.md) runbook.
 
